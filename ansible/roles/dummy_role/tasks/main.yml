@@ -1,0 +1,11 @@
+- name: Set hostname to "name-surename-lab2"
+  lineinfile:
+    path: /etc/hostname
+    line: "name-surename-lab2"
+  notify: Reload Hostname
+
+handlers:
+  - name: Reload Hostname
+    service:
+      name: systemd-hostnamed
+      state: restarted

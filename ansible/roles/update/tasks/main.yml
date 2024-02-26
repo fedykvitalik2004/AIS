@@ -1,0 +1,11 @@
+---
+# tasks file for update
+  
+- name: Change Hostname to the specific value
+  hostname:
+    name: "name-surename-lab2"
+  register: hostname_result
+
+- name: Show the result
+  debug:
+     var: hostname_result
